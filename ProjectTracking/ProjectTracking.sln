@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracking", "ProjectTracking\ProjectTracking.csproj", "{51B31D07-941E-4FD6-96D6-AE4F94C64347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTrackingServices", "ProjectTrackingServices\ProjectTrackingServices.csproj", "{172F0438-EFB1-4871-B4C6-7F09323CC915}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{51B31D07-941E-4FD6-96D6-AE4F94C64347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51B31D07-941E-4FD6-96D6-AE4F94C64347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51B31D07-941E-4FD6-96D6-AE4F94C64347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{172F0438-EFB1-4871-B4C6-7F09323CC915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{172F0438-EFB1-4871-B4C6-7F09323CC915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{172F0438-EFB1-4871-B4C6-7F09323CC915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{172F0438-EFB1-4871-B4C6-7F09323CC915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
