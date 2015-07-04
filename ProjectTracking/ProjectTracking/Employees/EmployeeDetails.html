@@ -10,13 +10,60 @@
 
     <script src="../Scripts/App/App.js"></script>
     <script src="../Controllers/EmployeesController.js"></script>
+    <script src="../Services/EmployeesService.js"></script>
 </head>
-<body ng-controller="EmployeesController">
-    <h1>{{title}}</h1>
-    <p>Employee Name - {{employees.employeeName}}</p>
-    <p>Designation   - {{employees.designation}}</p>
-    <p>Contact No.   - {{employees.contactNo}}</p>
-    <p>EMail ID      - {{employees.eMailID}}</p>
-    <p>Skill Sets    - {{employees.skillSets}}</p>
-</body>
+    <body ng-controller="EmployeesController">
+        
+        <h1>{{Title}}</h1>
+        <form method="GET" ng-submit="SearchEmployees(employeeName)">
+            Search: <input type="text" placeholder="Enter EmployeeID" ng-model="employeeName" />
+            <input type="submit" value="Go" />
+        </form>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr class="info">
+                    <td>
+                        Employee ID
+                    </td>
+                    <td>
+                        Employee Name
+                    </td>
+                    <td>
+                        Designation
+                    </td>
+                    <td>
+                        Contact No.
+                    </td>
+                    <td>
+                        EMailID
+                    </td>
+                    <td>
+                        Skill Sets
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success" ng-repeat="Employee in Employees | orderBy:'employeeName'">
+                    <td>
+                        {{Employee.employeeID}}
+                    </td>
+                    <td>
+                        {{Employee.employeeName}}
+                    </td>
+                    <td>
+                        {{Employee.designation}}
+                    </td>
+                    <td>
+                        {{Employee.contactNo}}
+                    </td>
+                    <td>    
+                        {{Employee.eMailID}}
+                    </td>
+                    <td>
+                        {{Employee.skillSets}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
 </html>

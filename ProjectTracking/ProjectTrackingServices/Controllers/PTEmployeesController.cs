@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -7,7 +8,7 @@ using ProjectTrackingServices.Models;
 
 namespace ProjectTrackingServices.Controllers
 {
-    [EnableCors(origins: "http://localhost:55058", headers: "*", methods: "*")]
+    [EnableCors(origins: "http://localhost:1630", headers: "*", methods: "*")]
     public class PTEmployeesController : ApiController
     {
       
@@ -20,11 +21,17 @@ namespace ProjectTrackingServices.Controllers
             return response;
         }
 
-       
+        [Route("api/ptemployees/{name:alpha}")]
+        public HttpResponseMessage SearchByName(string name)
+        {
+            var employees= EmployeesRepository.SearchEmployeesByName(name);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, employees);
+            return response;
+        }
 
         // GET: api/PTEmployeesController/5
         [Route("api/ptemployees/{id?}")]
-        public HttpResponseMessage GetEmployee(int id)
+        public HttpResponseMessage GetEmployee(int? id)
         {
             var emp = EmployeesRepository.GetEmployee(id);
             var response = Request.CreateResponse(HttpStatusCode.OK, emp);

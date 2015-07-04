@@ -7,27 +7,27 @@ namespace ProjectTrackingServices.Models
     public class EmployeesRepository
     {
         private static readonly ProjectTrackingDBEntities Db= new ProjectTrackingDBEntities();
-
-        //public static IList<Employee> GetAllEmployees()
-        //{
-        //    return Db.Employees.ToList();
-        //}
-
+        
         public static List<Employee> GetAllEmployees()
         {
-            var query = from employee in Db.Employees
+            //    return Db.Employees.ToList();
+        var query = from employee in Db.Employees
                         select employee;
             return query.ToList();
         }
 
-        public static Employee GetEmployee(int id)
+        public static Employee GetEmployee(int? id)
         {
             return Db.Employees.SingleOrDefault(x => x.EmployeeID == id);
         }
 
-        public IList<Employee> SearchEmployeesByName(string serchedName)
+        public static IList<Employee> SearchEmployeesByName(string name)
         {
-            return Db.Employees.Where(x => x.EmployeeName.Contains(serchedName)).ToList();
+            //return Db.Employees.Where(x => x.EmployeeName.Contains(name)).ToList();
+            var query = from employee in Db.Employees
+                        where employee.EmployeeName.Contains(name)
+                        select employee;
+            return query.ToList();
         }
 
         public static IList<Employee> InsertEmployee(Employee e)
